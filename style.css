@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-direction: column;
+}
+
+.keyboard {
+    width: 47vw;
+    height: 11vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.keys_row {
+    width: 47vw;
+    height: 3vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.key {
+    width: 3vw;
+    height: 3vw;
+    border: 1px solid black;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.field {
+    border: 2px solid red;
+}
+
+.moving_row {
+    height: 15vw;
+    width: 47vw;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3em;
+    border: 1px solid black;
+    position: relative;
+}
+
+.moving {
+    position: absolute;
+    box-sizing: border-box;
+    cursor: grab;
+}
+
+.moving:active {
+    cursor: grabbing;
+}
+
+.selected_field {
+    border: 2px solid blue
+}
+
+.correct {
+    border: 1px solid green;
+}
+
+.difficulty_row {
+    display: flex;
+    width: 12vw;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 5vw;
+}
+
+.difficulty_button {
+    width: 3vw;
+    height: 3vw;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.language_row {
+    display: flex;
+    width: 8.5vw;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 1vw;
+}
+
+.language_button {
+    width: 3vw;
+    height: 3vw;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: not-allowed;
+}
