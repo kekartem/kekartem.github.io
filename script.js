@@ -1,5 +1,5 @@
 const paths = {
-    '1': 'valentines_day_card/main.html',
+    '1': 'valentines_day_card/index.html',
     '2': 'mothers_day_card/index.html',
     '3': 'appearing_background/index.html',
     '4': 'page_onload_animation/index.html',
