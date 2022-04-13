@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+/* main */
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.mainh1 {
+    font-size: 4em;
+    font-family: 'Dancing Script', cursive;
+
+}
+
+.startbutton {
+    padding: 1em 2em;
+    font-size: 1.5em;
+    background-color: pink;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.startbutton:hover {
+    cursor: pointer;
+    box-shadow: 4px 4px 10px 0 rgba(34, 60, 80, 0.2);
+}
+
+.startbutton:active {
+    box-shadow: none;
+}
+
+
+/* service */
+.content {
+    width: 75vw;
+    height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+    width: 57vw;
+    height: 90vh;
+    border: 1px solid #bdbdbd;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0);
+}
+
+.card img {
+    max-height: 85vh;
+    max-width: 52vw;
+}
+
+.controls {
+    padding: 2em calc(2em - 4px) 2em 2em;
+    width: calc(15vw - 4em);
+    height: calc(90vh - 4em);
+    border: 1px solid #bdbdbd;
+    border-radius: 15px;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.controls_main {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    flex-grow: 0;
+    overflow: hidden scroll;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.controls_main::-webkit-scrollbar {
+    width: 2px; /* ширина scrollbar */
+}
+
+.controls_main::-webkit-scrollbar-track {
+    background: transparent; /* цвет дорожки */
+}
+
+.controls_main::-webkit-scrollbar-thumb {
+    background-color: pink; /* цвет плашки */
+    border-radius: 0;
+    width: 1px;
+}
+
+.controls_button {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls_item {
+    width: calc(15vw - 4em - 6px);
+    height: calc(15vw - 4em);
+    border: 1px solid #bdbdbd;
+    border-radius: 15px;
+    margin-bottom: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.controls_item > *:hover {
+    cursor: pointer !important;
+}
+
+.controls_item img {
+    max-width: calc(15vw - 6em);
+    max-height: calc(15vw - 6em);
+}
+
+.controls_selected {
+    background: #eaeaea;
+    box-shadow: 0 4px 10px 0 rgba(34, 60, 80, 0.2);
+}
+
+.nextstepbutton {
+    padding: 1em;
+    width: calc(100% - 2em);
+    background: pink;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nextstepbutton:hover {
+    box-shadow: 4px 4px 10px 0 rgba(34, 60, 80, 0.2);
+    cursor: pointer;
+}
+
+.nextstepbutton:active {
+    box-shadow: none;
+    cursor: pointer;
+}
+
+
+.borderimage {
+    position: absolute;
+}
+
+.detailimage {
+    width: 7vw;
+    position: absolute;
+    transform: rotate(0deg);
+}
+
+.detailimage:hover {
+    cursor: pointer;
+}
+
+.resultimage {
+    max-height: 50vh;
+    max-width: 50vw;
+}
+
+.progressbar {
+    height: 1.3em;
+    width: 0;
+    padding-left: -3em;
+    padding-right: -3em;
+    background-color: pink;
+    position: absolute;
+}
+
+.downloadbutton {
+    padding: 1em;
+    background: pink;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+    user-select: none;
+    cursor: pointer;
+}
+
+.downloadbutton:hover {
+    box-shadow: 4px 4px 10px 0 rgba(34, 60, 80, 0.2);
+}
+
+.downloadbutton:active {
+    box-shadow: none;
+
+}
+
+.cardtext {
+    display: flex;
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    height: auto;
+}
+
+.textbuttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    opacity: 0;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    flex-shrink: 1;
+    max-height: 200px;
+}
+
+.textbutton {
+    padding: .5em;
+    background: white;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 0 0 .3em .3em;
+    color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.textbutton:hover {
+    cursor: pointer !important;
+}
+
+.text {
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0);
+    height: 60px;
+    max-width: 27vw;
+}
+
+.text:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.text:focus ~ .textbuttons {
+    opacity: 1;
+}
+
+.cardtext:hover .textbuttons {
+    opacity: 1;
+}
+
+.textureimage {
+    position: absolute;
+}
+
+.detailpopup {
+    background: white;
+    border: 1px solid gray;
+    border-radius: 7px;
+    padding: .2em 0 .2em 0;
+    display: inline-block;
+    position: absolute;
+    top: 10000px;
+    left: 10000px;
+}
+
+.detailpopupitem {
+    padding: .4em 2em;
+}
+
+.detailpopupitem:hover {
+    background: #eaeaea;
+}
+
+
+.detailpopupitem:active {
+    background: #d4d4d4;
+}
+
+.shadowbuttons {
+    width: calc(100% - 2px);
+    text-align: left;
+}
+
+
+.templateimg {
+    filter: drop-shadow(0 0 0 #ffffff);
+
+}
+
+input[type='range'] {
+    overflow: hidden;
+    width: calc(100% - 2px);
+    height: 20px;
+    -webkit-appearance: none;
+    background-color: #8f7a8e;
+    border-radius: 5px;
+    margin-bottom: 1.5em;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+    height: 10px;
+    -webkit-appearance: none;
+    color: #a37187;
+    margin-top: -10px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    width: 20px;
+    -webkit-appearance: none;
+    height: 20px;
+    cursor: ew-resize;
+    background: #f4e4d7;
+    box-shadow: -80px 0 0 70px #a37187;
+}
+
+input[type="range"]::-moz-range-progress {
+    background-color: #a37187;
+}
+
+input[type="range"]::-moz-range-track {
+    background-color: #f4e4d7;
+}
+
+input[type="range"]::-ms-fill-lower {
+    background-color: #a37187;
+}
+
+input[type="range"]::-ms-fill-upper {
+    background-color: #8f7a8e;
+}
+
+
+.resetbutton {
+    padding: 1em;
+    width: calc(100% - 2em);
+    background: pink;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resetbutton:hover {
+    box-shadow: 4px 4px 10px 0 rgba(34, 60, 80, 0.2);
+    cursor: pointer;
+}
+
+.resetbutton:active {
+    box-shadow: none;
+}
+
+.colorsrow {
+    width: calc(100% - 4px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.colorbutton {
+    width: calc(6.5vw - 2em);
+    height: calc(6.5vw - 2em);
+    border-radius: 5px;
+    z-index: 999;
+    margin-right: .2em;
+    margin-left: .2em;
+    border: 1px solid gray;
+}
+
+.colorbutton_selected {
+    box-shadow: -1px 1px 8px -2px rgba(34, 60, 80, 0.2);
+    outline: 1px solid #cacaca;
+}
+
+.colorbutton:hover {
+    cursor: pointer;
+}
+
+.detailimage:hover {
+    outline: 1px solid gray;
+    border-radius: 5px;
+}
+
+.fontbutton {
+    width: calc(6.5vw - 2em);
+    height: calc(6.5vw - 2em);
+    border-radius: 5px;
+    z-index: 999;
+    margin-right: .2em;
+    margin-left: .2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+}
+
+
+.fontbutton_selected {
+    box-shadow: -1px 1px 8px -2px rgba(34, 60, 80, 0.2);
+    outline: 1px solid #cacaca;
+}
+
+.fontbutton:hover {
+    cursor: pointer;
+}
+
+.stepbackbutton {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 5vh;
+    left: calc(12.7vw - 50px - 2em);
+    border: 1px solid #bdbdbd;
+    border-radius: 10px;
+}
+
+.stepbackbutton:hover {
+    cursor: pointer;
+    box-shadow: 4px 4px 10px 0 rgba(34, 60, 80, 0.2);
+}
+
+.stepbackbutton:active {
+    box-shadow: none;
+}
+
+.notexture {
+    background: url(images/notexture.webp);
+    background-size: cover;
+}
+
+/* Для мобилок */
+@media only screen and (max-width: 320px) {
+    body {
+        overflow: hidden;
+    }
+
+    .card {
+        width: 100vw;
+        height: 100vw;
+        flex-shrink: 0;;
+    }
+
+    .controls {
+        margin: 0;
+        width: 100vw;
+        height: calc(100vh - 100vw - 50px);
+    }
+
+    .controls_main {
+        flex-direction: row;
+        overflow: scroll;
+    }
+
+    .container {
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .content {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .controls_main {
+        width: 100vw;
+        height: calc(100vh - 100vw - 8em - 50px);
+        margin: 0;
+
+    }
+
+    .controls_item {
+        width: calc(100vh - 100vw - 8em - 100px);
+        height: calc(100vh - 100vw - 8em - 100px);
+        margin: 0 1em 0 0;
+    }
+
+    .controls_main img {
+        max-width: calc(100vh - 100vw - 8em - 150px);
+        max-height: calc(100vh - 100vw - 8em - 150px);
+    }
+
+    .controls_main::-webkit-scrollbar {
+        height: 2px; /* ширина scrollbar */
+    }
+
+    .controls_main::-webkit-scrollbar-track {
+        background: transparent; /* цвет дорожки */
+    }
+
+    .controls_main::-webkit-scrollbar-thumb {
+        background-color: pink; /* цвет плашки */
+        border-radius: 0;
+        width: 1px;
+    }
+}
