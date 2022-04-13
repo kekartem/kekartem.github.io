@@ -9,6 +9,7 @@ $('.return').on('mouseover', function() {
     anime({
         targets: '.icon',
         opacity: 1,
+        top: `${window.innerHeight / 2 - 10}px`,
         easing: 'easeInOutQuad',
         duration: 200,
     });
@@ -25,6 +26,7 @@ $('.return').on('mouseout', function() {
     anime({
         targets: '.icon',
         opacity: 0,
+        top: '10px',
         easing: 'easeInOutQuad',
         duration: 200,
     });
