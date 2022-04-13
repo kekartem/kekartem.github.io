@@ -13,6 +13,56 @@ let current_background = 1;
 let current_tone = 'first';
 let a;
 
+// Conver cancas into png
+function convert() {
+    let container = document.getElementById('container');
+
+    html2canvas(document.getElementById('back')).then(function (canvas) {
+
+        var my_screen = canvas;
+        canvas.setAttribute('id', 'mycanvas');
+        canvas.style.position = 'absolute'
+        canvas.style.left = '10000px'
+        container.appendChild(my_screen);
+    })
+    .then((data) => {
+            var tmp_canvas = document.getElementById('mycanvas');
+            dataURL = tmp_canvas.toDataURL("image/webp");
+            container.innerHTML = '<h1 class="mainh1">Result as an image:</h1>'
+
+            let todownload = document.createElement('div');
+            todownload.className = 'todownload'
+            todownload.id = 'todownload'
+            todownload.innerHTML = `<img class="resultimage" src='${dataURL}'><textarea class="textfield" placeholder="Add some text"></textarea>`;
+            container.appendChild(todownload);
+            let downloadbutton = document.createElement('div');
+            downloadbutton.className = 'downloadbutton';
+            downloadbutton.innerHTML = 'Download!'
+            container.appendChild(downloadbutton);
+            downloadbutton.addEventListener('click', function () {
+                html2canvas(document.getElementById('todownload')).then(function (canvas) {
+                    var my_screen_2 = canvas;
+                    canvas.setAttribute('id', 'mycanvas2');
+                    canvas.style.position = 'absolute'
+                    canvas.style.left = '10000px'
+                    container.appendChild(my_screen_2);
+                })
+                .then((data) => {
+                        var tmp_canvas_2 = document.getElementById('mycanvas2');
+                        dataURL = tmp_canvas_2.toDataURL("image/webp");
+                        let link = document.createElement("a");
+                        link.style.display = "none";
+                        link.href = dataURL;
+                        link.download = 'mothersdatcard';
+                        document.body.appendChild(link);
+                        link.click();
+                    
+                    }
+                )
+            })
+        });
+}
+
 // Animating head image changing
 $('.head').on('click', function() {
     current_head -= 25;
@@ -212,52 +262,5 @@ $('.done').on('click', function() {
     $('.bodies_row_wrapper').html(`<img src="assets/images/${current_tone}/bodys/body${current_body_img}.webp">`);
     $('.legs_row_wrapper').html(`<img src="assets/images/${current_tone}/legs/legs${current_legs_img}.webp">`);
     $('.feet_row_wrapper').html(`<img src="assets/images/${current_tone}/feet/feet${current_feet_img}.webp">`);
-    let container = document.getElementById('container');
-
-    html2canvas(document.getElementById('back')).then(function (canvas) {
-
-        var my_screen = canvas;
-        canvas.setAttribute('id', 'mycanvas');
-        canvas.style.position = 'absolute'
-        canvas.style.left = '10000px'
-        container.appendChild(my_screen);
-    })
-    .then((data) => {
-            var tmp_canvas = document.getElementById('mycanvas');
-            dataURL = tmp_canvas.toDataURL("image/webp");
-            container.innerHTML = '<h1 class="mainh1">Result as an image:</h1>'
-
-            let todownload = document.createElement('div');
-            todownload.className = 'todownload'
-            todownload.id = 'todownload'
-            todownload.innerHTML = `<img class="resultimage" src='${dataURL}'><textarea class="textfield" placeholder="Add some text"></textarea>`;
-            container.appendChild(todownload);
-            let downloadbutton = document.createElement('div');
-            downloadbutton.className = 'downloadbutton';
-            downloadbutton.innerHTML = 'Download!'
-            container.appendChild(downloadbutton);
-            downloadbutton.addEventListener('click', function () {
-                html2canvas(document.getElementById('todownload')).then(function (canvas) {
-                    var my_screen_2 = canvas;
-                    canvas.setAttribute('id', 'mycanvas2');
-                    canvas.style.position = 'absolute'
-                    canvas.style.left = '10000px'
-                    container.appendChild(my_screen_2);
-                })
-                .then((data) => {
-                        var tmp_canvas_2 = document.getElementById('mycanvas2');
-                        dataURL = tmp_canvas_2.toDataURL("image/webp");
-                        let link = document.createElement("a");
-                        link.style.display = "none";
-                        link.href = dataURL;
-                        link.download = 'mothersdatcard';
-                        document.body.appendChild(link);
-                        link.click();
-                    
-                    }
-                )
-            })
-        }
-    )
-
+    convert();
 })
