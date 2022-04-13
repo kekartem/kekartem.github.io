@@ -12,5 +12,7 @@ const paths = {
 };
 
 $('.card_arrow').on('click', function() {
-    window.location.href =paths[$(this).attr('id')];
+    if ($(this).attr('id') != 6 && $(this).attr('id') != 9) {
+        window.location.href =paths[$(this).attr('id')];
+    }
 });
