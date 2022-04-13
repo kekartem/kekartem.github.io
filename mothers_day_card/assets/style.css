@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.character {
+    height: 80vh;
+    width: 25vh;
+    overflow: hidden;
+}
+
+.heads_row_wrapper {
+    height: 25.6%;
+    width: 25vh;
+    overflow: hidden;
+}
+
+.heads_row_wrapper img {
+    width: 100%;
+}
+
+.heads_row {
+    display: flex;
+    height: 100%;
+    flex-shrink: 0;
+    flex-grow: 1;
+    position: relative;
+}
+
+.head {
+    height: 100%;
+    width: 25vh;
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+    flex-shrink: 0;
+    flex-grow: 1;
+}
+
+.head img {
+    width: 25vh;
+
+}
+
+
+.bodies_row_wrapper {
+    height: 19.6%;
+    width: 25vh;
+    z-index: 1;
+}
+
+.bodies_row_wrapper img {
+    width: 100%;
+}
+
+.bodies_row {
+    display: flex;
+    height: 100%;
+    flex-shrink: 0;
+    flex-grow: 1;
+    position: relative;
+    overflow-y: visible;
+}
+
+.body {
+    width: 25vh;
+    height: 100%;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.body img {
+    width: 25vh;
+    position: absolute;
+}
+
+
+.legs_row_wrapper {
+    height: 47.6%;
+    width: 25vh;
+    overflow-x: hidden;
+    overflow-y: visible;
+    z-index: -1;
+}
+
+.legs_row_wrapper img {
+    width: 100%
+}
+
+.legs_row {
+    display: flex;
+    height: 100%;
+    flex-shrink: 0;
+    flex-grow: 1;
+    position: relative;
+}
+
+
+.legs {
+    height: 100%;
+    width: 25vh;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.legs img {
+    width: 25vh;
+}
+
+.feet_row_wrapper {
+    height: 7.2%;
+    width: 25vh;
+    overflow: hidden;
+}
+
+.feet_row_wrapper img {
+    width: 100%;
+}
+
+.feet_row {
+    display: flex;
+    height: 100%;
+    flex-shrink: 0;
+    flex-grow: 1;
+    position: relative;
+}
+
+
+.feet {
+    height: 100%;
+    width: 25vh;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.feet img {
+    width: 100%;
+}
+
+.back {
+    position: absolute;
+    height: 100vh;
+    width: 77vh;
+    background: url(images/backgrounds/bg2.webp);
+    background-position: top left;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.detail {
+    position: absolute;
+    z-index: 1;
+    bottom: 73.2vh;
+    left: calc(0.8 * 77vh);
+}
+
+.detail img {
+    width: 50px;
+}
+
+.painting {
+    position: absolute;
+    left: 4.04vh;
+    top: 15.1vh;
+    width: 18.4vh;
+    display: none;
+}
+
+.painting img {
+    width: 18.4vh;
+}
+
+.window {
+    position: absolute;
+    left: 1.7vh;
+    top: 8.2vh;
+    width: 28.5vh;
+    display: block;
+}
+
+.window img {
+    width: 28.5vh;
+}
+
+.background_row {
+    width: calc((100vw - 77vh) / 2 - 4vw);
+    height: 6.5vw;
+    position: absolute;
+    left: 2vw;
+    top: 2vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.bg_mini {
+    height: 6.5vw;
+    background: green;
+    width: 5vw;
+    margin-left: 1vw;
+    background-size: cover;
+    border: 1px solid #b3b3b3;
+    box-sizing:border-box;
+    border-radius: 5px;
+    filter: brightness(0.8);
+    box-shadow: none;
+}
+
+
+.selected {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
+}
+
+
+
+.skin_tone_row {
+    width: calc((100vw - 77vh) / 2 - 4vw);
+    height: 6.5vw;
+    position: absolute;
+    left: 2vw;
+    top: 10.5vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.second_skin_tone_row {
+    width: calc((100vw - 77vh) / 2 - 4vw);
+    height: 6.5vw;
+    position: absolute;
+    left: 2vw;
+    top: 19vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.skin_tone {
+    height: 6.5vw;
+    background: green;
+    width: 5vw;
+    margin-left: 1vw;
+    border: 1px solid #b3b3b3;
+    box-sizing:border-box;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+.done_row {
+    height: 6.5vw;
+    width: calc((100vw - 77vh) / 2 - 4vw);
+    position: absolute;
+    left: 2vw;
+    top: 27.5vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.done_button {
+    height: 3.5vw;
+    width: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #b3b3b3;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
+    font-size: 1.3em;
+}
+
+.done_button:hover {
+    transform: scale(1.02);
+    box-shadow: 4px 4px 10px 0px rgba(34, 60, 80, 0.5);
+    cursor: pointer;
+}
+
+.done_button:active {
+    box-shadow: none;
+    transform: none;
+}
+
+.skin_tone_selected {
+    transform: scale(1.1);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
+}
+
+.resultimage {
+    width: 40vh;
+}
+
+.textfield {
+    width: calc(40vh);
+    box-sizing: border-box;
+    height: 5vh;
+    padding: 0;
+    font-size: 3vh;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    outline: none;
+    resize: none;
+    line-height: 5vh;
+}
+
+
+.todownload {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid gray;
+}
+.downloadbutton {
+    margin-top: 2em;
+    height: 4.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #b3b3b3;
+    padding: 1em 2em 1em 2em;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
+    font-size: 1.3em;
+}
+
+.downloadbutton:hover {
+    transform: scale(1.02);
+    box-shadow: 4px 4px 10px 0px rgba(34, 60, 80, 0.5);
+    cursor: pointer;
+}
+
+.downloadbutton:active {
+    box-shadow: none;
+    transform: none;
+}
