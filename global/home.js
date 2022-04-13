@@ -1,4 +1,4 @@
-$('.return').on('mouseover', function() {
+$('.return').on('mouseenter', function() {
     anime({
         targets: '.return',
         width: '10vw',
@@ -14,7 +14,7 @@ $('.return').on('mouseover', function() {
     });
 });
 
-$('.return').on('mouseout', function() {
+$('.return').on('mouseleave', function() {
     anime({
         targets: '.return',
         width: '5vw',
