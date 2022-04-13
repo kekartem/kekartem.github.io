@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&amp;amp;amp;amp;amp;display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: url('bg.jpg');
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.field {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    border: 5px solid white;
+    box-shadow: 0 0 100px 10px white;
+}
+
+.cell {
+    border: 1px solid #a09dd6;
+    background: rgba(160, 157, 214, .2);
+    margin: 0;
+    padding: 0;
+}
+
+.thanos {
+    border-radius: 50px;
+    position: absolute;
+    top: 50px;
+    left: 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thanos img {
+    height: 100px;
+}
+
+.text {
+    color: white;
+    font-size: 1.5em;
+    position: absolute;
+}
