@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    background: black;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.button {
+    background: linear-gradient(30deg, #8729ca, #40eaf3);
+    box-shadow: 22px 7px 50px -26px linear-gradient(#8729ca, #40eaf3);
+    width: 200px;
+    height: 60px;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.circle {
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+}
