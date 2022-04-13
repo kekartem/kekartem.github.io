@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url(bandw.jpg);
+    background-position: 0 0;
+    background-size: max(100vw, 100vh);
+    cursor: none;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.circle {
+    position: absolute;
+    transform: translate(100vw, 150vh);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: url(color.jpeg);
+    background-position: 0 0;
+    background-size: max(100vw, 100vh);
+}
