@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/f77600b8df.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="splitter">
+            <div class="line"></div>
+            <p class="splitter_heading">Complete projects</p>
+            <div class="line"></div>
+        </div>
+        <div class="card_row">
+            <div class="card">
+                <div class="card_content">
+                    <p>Valetine's day card service</p>
+                    <p class="github"><i class="fa-brands fa-github"></i> <a href="">Explore at github</a></p>
+                    
+                </div>
+                <div class="card_arrow" id="1">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+                
+                
+            </div>
+            <div class="card">
+                <div class="card_content">
+                    <p>Mother's day card service</p>
+                    <p class="github"><i class="fa-brands fa-github"></i> <a href="">Explore at github</a></p>
+                </div>
+                <div class="card_arrow" id="2">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="splitter">
+            <div class="line"></div>
+            <p class="splitter_heading">Just fancy effects</p>
+            <div class="line"></div>
+        </div>
+        <div class="card_row">
+            <div class="card">
+                <div class="card_content">
+                    <p>Flashlight effect</p>
+                    <p class="github"><i class="fa-brands fa-github"></i> <a href="">Explore at github</a></p>
+                </div>
+                <div class="card_arrow" id="3">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_content">
+                    <p>Page onload animation</p>
+                    <p class="github"><i class="fa-brands fa-github"></i> <a href="">Explore at github</a></p>
+                </div>
+                <div class="card_arrow" id="4">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+        <div class="card_row">
+            <div class="card">
+                <div class="card_content">
+                    <p>Button onclick animation</p>
+                    <p class="github"><i class="fa-brands fa-github"></i> <a href="">Explore at github</a></p>
+                </div>
+                <div class="card_arrow" id="5">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_content">
+                    <p>SVG handwriting</p>
+                    <p class="github"><i class="fa-brands fa-github"></i> <a href="">Explore at github</a></p>
+                </div>
+                <div class="card_arrow" id="6">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="splitter">
+            <div class="line"></div>
+            <p class="splitter_heading">Simple web-pages</p>
+            <div class="line"></div>
+        </div>
+        <div class="card_row">
+            <div class="card">
+                <div class="card_content">
+                    <p>Blank 1</p>
+                    <p class="github"><i class="fa-brands fa-github"></i> <a href="">Explore at github</a></p>
+                </div>
+                <div class="card_arrow" id="7">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_content">
+                    <p>Blank 2</p>
+                    <p class="github"><i class="fa-brands fa-github"></i> <a href="">Explore at github</a></p>
+                </div>
+                <div class="card_arrow" id="8">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="splitter">
+            <div class="line"></div>
+            <p class="splitter_heading">@todo</p>
+            <div class="line"></div>
+        </div>
+        <div class="card_row">
+            <div class="card">
+                <div class="card_content">
+                    <p>Keyboard exercise</p>
+                    <p class="github"><i class="fa-brands fa-github"></i> <a href="">Explore at github</a></p>
+                </div>
+                <div class="card_arrow" id="9">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_content">
+                    <p>Blank 3</p>
+                    <p class="github"><i class="fa-brands fa-github"></i> <a href="">Explore at github</a></p>
+                </div>
+                <div class="card_arrow" id="9">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+        <div class="splitter">
+            <div class="line"></div>
+            <p class="splitter_heading">Thank you for coming!</p>
+            <div class="line"></div>
+        </div>
+        
+    </div>
+    <canvas id="bg-three" style="width: 100vw; height: 100vh;"></canvas>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script type="module">
+        import * as THREE from 'https:threejsfundamentals.org/threejs/resources/threejs/r132/build/three.module.js';
+        import {RectAreaLightUniformsLib} from 'https:threejsfundamentals.org/threejs/resources/threejs/r132/examples/jsm/lights/RectAreaLightUniformsLib.js';
+        import {RectAreaLightHelper} from 'https:threejsfundamentals.org/threejs/resources/threejs/r132/examples/jsm/helpers/RectAreaLightHelper.js';
+        
+        function main() {
+            const canvas = document.querySelector('#bg-three');
+            const renderer = new THREE.WebGLRenderer({canvas, alpha: true,});
+            renderer.setPixelRatio( window.devicePixelRatio * 5 );
+            renderer.setClearColor( 0xffffff, 1);
+            RectAreaLightUniformsLib.init();
+
+            const fov = 50;
+            const aspect = window.innerWidth / window.innerHeight;
+            const near = 0.1;
+            const far = 350;
+            const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+            camera.position.z = 250;
+
+            const scene = new THREE.Scene();
+
+            
+            
+            const color = 0xffffff;
+            const intensity = 1;
+            const light = new THREE.DirectionalLight(color, intensity);
+            light.position.set(-50, 0, 10);
+            scene.add(light);
+
+            const light1 = new THREE.DirectionalLight(color, intensity);
+            light1.position.set(50, 0, 10);
+            scene.add(light1);
+        
+            const boxWidth = 20;
+            const boxHeight = 20;
+            const boxDepth = 20;
+
+            function makeInstance(color, x) {
+                const material = new THREE.MeshPhongMaterial({
+                    color,
+                    opacity: 0.2,
+                    transparent: true,
+                });
+
+
+                let a = Math.round(Math.random() * 30) + 20;
+                const geometry = new THREE.BoxGeometry(a, a, a);
+
+                const cube = new THREE.Mesh(geometry, material);
+                scene.add(cube);
+
+                cube.position.x = Math.round(Math.random() * 430) - 215;
+                cube.position.y = Math.round(Math.random() * 230) - 115;
+
+                return cube;
+            } 
+
+            const cubes = [
+                // [cube instance, x axis sign, y axis sign, speed]
+                [makeInstance(0xfccfcc,  0), parseFloat((Math.random() * (0.4 + 0.4) - 0.4).toFixed(1)), parseFloat((Math.random() * (0.4 + 0.4) - 0.4).toFixed(1)), Math.round(Math.random() * 3)],
+                [makeInstance(0xfccfcc,  0), parseFloat((Math.random() * (0.4 + 0.4) - 0.4).toFixed(1)), parseFloat((Math.random() * (0.4 + 0.4) - 0.4).toFixed(1)), Math.round(Math.random() * 3)],
+                [makeInstance(0xfccfcc,  0), parseFloat((Math.random() * (0.4 + 0.4) - 0.4).toFixed(1)), parseFloat((Math.random() * (0.4 + 0.4) - 0.4).toFixed(1)), Math.round(Math.random() * 3)],
+                [makeInstance(0xfccfcc,  0), parseFloat((Math.random() * (0.4 + 0.4) - 0.4).toFixed(1)), parseFloat((Math.random() * (0.4 + 0.4) - 0.4).toFixed(1)), Math.round(Math.random() * 3)],
+                [makeInstance(0xfccfcc,  0), parseFloat((Math.random() * (0.4 + 0.4) - 0.4).toFixed(1)), parseFloat((Math.random() * (0.4 + 0.4) - 0.4).toFixed(1)), Math.round(Math.random() * 3)],
+                [makeInstance(0xfccfcc,  0), parseFloat((Math.random() * (0.4 + 0.4) - 0.4).toFixed(1)), parseFloat((Math.random() * (0.4 + 0.4) - 0.4).toFixed(1)), Math.round(Math.random() * 3)],
+                [makeInstance(0xfccfcc,  0), parseFloat((Math.random() * (0.4 + 0.4) - 0.4).toFixed(1)), parseFloat((Math.random() * (0.4 + 0.4) - 0.4).toFixed(1)), Math.round(Math.random() * 3)],
+            ];
+            
+
+            function render(time) {
+                time *= 0.0003;
+
+                cubes.forEach((cube, ndx) => {
+                    const speed = cube[3];
+                    const rot = time * speed;
+                    cube[0].rotation.x = rot;
+                    cube[0].rotation.y = rot;
+                    cube[0].position.x += cube[1];
+                    cube[0].position.y += cube[2];
+                    if (cube[0].position.x <= -215 || cube[0].position.x >= 215) {
+                        cube[1] *= -1
+                    }
+                    if (cube[0].position.y <= -115 || cube[0].position.y >= 115) {
+                        cube[2] *= -1;
+                    }
+                });
+
+                renderer.render(scene, camera);
+
+                requestAnimationFrame(render);
+            }
+            requestAnimationFrame(render);
+
+        }
+
+        main();
+
+</script>
+</body>
+</html>
