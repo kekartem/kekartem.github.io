@@ -1,0 +1,23 @@
+.return {
+    width: 5vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: purple;
+    color: white;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.return:active {
+    background-color: rgba(128, 0, 128, 0.534);
+}
+
+.icon {
+    opacity: 0;
+}
