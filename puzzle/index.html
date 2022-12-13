@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="field">
+        </div>
+    </div>
+    <script>
+        function shuffle(array) {
+            let currentIndex = array.length, randomIndex;
+            while (currentIndex != 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+                [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex], array[currentIndex]];
+            }
+            return array;
+        }
+
+
+        function check() {
+            let flag = true
+            for (let i = 0; i < 9; i++) {
+                if (!pieces[i].innerHTML.includes(`${i + 1}.png`)) {
+                    flag = false
+                    break
+                }
+            }
+
+            return flag
+        }
+
+
+        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        numbers = shuffle(numbers)
+        console.log(numbers)
+        let field = document.querySelector('.field')
+        for (let i = 0; i < 9; i++) {
+            let piece = document.createElement('div')
+            piece.classList.add('piece')
+            piece.id = `${i}`
+            let img = document.createElement('img')
+            img.setAttribute('src', `${numbers[i]}.png`)
+            piece.appendChild(img)
+            field.appendChild(piece)
+        }
+
+        let currentTranslateX = 0
+        let currentTranslateY = 0
+        let initialX = 0
+        let initialY = 0
+        let isPressed = false
+        let current = 0
+        let target = 0
+        let notDone = true
+        let pieces = document.querySelectorAll('.piece')
+        pieces.forEach((piece) => {
+            piece.addEventListener('mousedown', function(e){
+                        e.preventDefault()
+                if (notDone) {
+                    if (!isPressed) {
+                        current = piece
+                        initialX = e.pageX
+                        initialY = e.pageY
+                        isPressed = true
+                        piece.style.border = '2px solid yellow'
+                    }
+                }
+            })
+
+            piece.addEventListener('mouseup', function() {
+                if (notDone) {
+                    isPressed = false
+                    piece.style.border = 'none'
+                    if (target != 0) {
+                        target.style.border = 'none'
+                        let temp_html = target.innerHTML
+                        target.innerHTML = piece.innerHTML
+                        piece.innerHTML = temp_html
+                        piece.style.transform = 'none'
+                        if (check()) {
+                            setTimeout(function() {alert('готово!')}, 200)
+                            notDone = false
+                            setTimeout(function() {
+                                document.querySelector('.container').innerHTML = '<a href="jamal.png" download="jamal.png">СКАЧАТЬ</a>'
+                            }, 1000)
+                        }
+                    } else {
+                        piece.style.transform = 'none'
+                    }
+                }
+            })
+
+            piece.addEventListener('mouseover', function() {
+                if (isPressed) {
+                    piece.style.border = '2px solid blue'
+                }
+            })
+
+            piece.addEventListener('mouseout', function() {
+                if (isPressed) {
+                    piece.style.border = 'none'
+                }
+
+            })
+        })
+
+        document.addEventListener('mousemove', function(e) {
+            if (isPressed) {
+                current.style.transform = `translate(${-initialX + e.pageX}px, ${-initialY + e.pageY}px)`
+                        let flag = false
+                for (let i = 0; i < 9; i++) {
+                    if (i != current.id) {
+                        let rect = pieces[i].getBoundingClientRect()
+                        if (rect.left < e.pageX && e.pageX < rect.right && rect.top < e.pageY && e.pageY < rect.bottom) {
+                            pieces[i].style.border = '2px solid blue'
+                            target = pieces[i]
+                            flag = true
+                        } else {
+                            pieces[i].style.border = 'none'
+                        }
+                    }
+                }
+
+                if (!flag) {
+                    target = 0
+                }
+            }
+        })
+
+
+        
+    </script>
+</body>
+</html>

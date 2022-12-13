@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.field {
+    width: 81vh;
+    height: 81vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.piece {
+    width: 27vh;
+    height: 27vh;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+.piece img {
+    width: 100%;
+}
+
