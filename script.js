@@ -4,7 +4,7 @@ const paths = {
     '3': 'appearing_background/index.html',
     '4': 'page_onload_animation/index.html',
     '5': 'btn_onclick_animation/index.html',
-    '6': '#',
+    '6': 'puzzle/index.html',
     '7': '#',
     '8': '',
     '9': 'keyboard_training/index.html',
