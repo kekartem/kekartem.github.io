@@ -52,11 +52,13 @@ let hours_field = document.querySelector('.hours')
 let minutes_field = document.querySelector('.minutes')
 let seconds_field = document.querySelector('.seconds')
 
+let timezoneoffset = new Date().getTimezoneOffset() * 60 * 1000 * -1
+
 let timer
 
 let now = new Date()
 let till = new Date(2022, 11, 26, 2, 50, 0)
-let left_ms = new Date(till - now)
+let left_ms = new Date(till - now) - timezoneoffset + 5 * 60 * 60 * 1000
 if (till < now) {
     done()
 } else {
