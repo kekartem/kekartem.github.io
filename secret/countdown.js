@@ -18,6 +18,42 @@ if (till < now) {
     hours_field.innerHTML = '00'
     minutes_field.innerHTML = '00'
     seconds_field.innerHTML = '00'
+    anime({
+        targets: '.time-container',
+        keyframes: [
+            {scale: 1},
+            {scale: 1.3},
+            {scale: 1},
+            {scale: 1.3},
+            {scale: 1},
+            {scale: 1},
+            {scale: 1},
+            {scale: 0},
+        ],
+        duration: 2000,
+        delay: 500,
+        easing: 'linear',
+        complete: function(a) {
+            document.querySelector('h2').innerHTML = 'Лягушки встретились!'
+            document.querySelector('h2').style.fontSize = '3em'
+            anime({
+                targets: '.leaf-container',
+                opacity: 0,
+                duration: 1500,
+                easing: 'linear',
+                complete: function(a) {
+                    document.querySelector('.time-container').style.display = 'none'
+                    document.querySelector('h2').style.margin = 0
+                    anime({
+                        targets: '.done-container',
+                        opacity: 1,
+                        duration: 1500,
+                        easing: 'linear'
+                    })
+                }
+            })
+        }
+    })
 } else {
     let left_days = Math.floor(left_ms / 86400000)
     let left_hours = Math.floor((left_ms % 86400000) / 3600000)

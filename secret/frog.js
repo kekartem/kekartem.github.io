@@ -59,7 +59,7 @@ for (let i = 0; i < 10; i++) {
     }
     let count = 0
     while (flag == true) {
-        if (count == 50) { break }
+        if (count == 100) { break }
         if (i < 5) {
             left = randint(0, window_width / 2 - 70)
         } else {
@@ -90,16 +90,28 @@ frog.style.left = `${coords[current_leaf][0] + 10}px`
 frog.style.top = `${coords[current_leaf][1] + 3}px`
 leaf_container.appendChild(frog)
 
+let current_leaf1 = 5;
+let frog1 = document.createElement('div')
+frog1.classList.add('frog1')
+frog1.innerHTML = '<img src="frog.png">'
+frog1.style.left = `${coords[current_leaf1][0] + 10}px`
+frog1.style.top = `${coords[current_leaf1][1] + 3}px`
+leaf_container.appendChild(frog1)
+
 setInterval(function() {
     let new_leaf = randint(0, coords.length - 1)
     while (new_leaf == current_leaf) {
         new_leaf = randint(0, coords.length - 1)
     }
+
+    let delay = randint(0, 2000)
+
     anime({
         targets: '.frog',
         rotate: calc_rotate([coords[current_leaf][0] + 35, coords[current_leaf][1] + 35], [coords[new_leaf][0] + 35, coords[new_leaf][1] + 35]),
         duration: 700,
         easing: 'linear',
+        delay: delay,
         complete: function(anim) {
             frog.innerHTML = '<img src="frog1.png">'
             anime({
@@ -107,7 +119,7 @@ setInterval(function() {
                 scale: 2.5,
                 duration: 500,
                 direction: 'alternate',
-                easing: 'linear'
+                easing: 'linear',
             })
             anime({
                 targets: '.frog',
@@ -128,5 +140,45 @@ setInterval(function() {
         }
     })
     current_leaf = new_leaf
+
+    let new_leaf1 = randint(0, coords.length - 1)
+    while (new_leaf1 == current_leaf1 || new_leaf1 == new_leaf) {
+        new_leaf1 = randint(0, coords.length - 1)
+    }
+    let delay1 = randint(0, 2300)
+    anime({
+        targets: '.frog1',
+        rotate: calc_rotate([coords[current_leaf1][0] + 35, coords[current_leaf1][1] + 35], [coords[new_leaf1][0] + 35, coords[new_leaf1][1] + 35]),
+        duration: 700,
+        easing: 'linear',
+        delay: delay1,
+        complete: function(anim) {
+            frog1.innerHTML = '<img src="frog1.png">'
+            anime({
+                targets: '.frog1',
+                scale: 2.5,
+                duration: 500,
+                direction: 'alternate',
+                easing: 'linear',
+            })
+            anime({
+                targets: '.frog1',
+                left: `${coords[new_leaf1][0] + 10}px`,
+                top: `${coords[new_leaf1][1] + 3}px`,
+                duration: 1000,
+                easing: 'linear',
+                complete: function(a) {
+                    frog1.innerHTML = '<img src="frog.png">'
+                    anime({
+                        targets: '.frog1',
+                        rotate: 0,
+                        duration: 500,
+                        easing: 'linear',
+                    })
+                }
+            })
+        }
+    })
+    current_leaf1 = new_leaf1
 }, 5500)
 
