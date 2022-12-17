@@ -5,15 +5,8 @@ function format_time(number) {
     return number
 }
 
-let days_field = document.querySelector('.days')
-let hours_field = document.querySelector('.hours')
-let minutes_field = document.querySelector('.minutes')
-let seconds_field = document.querySelector('.seconds')
 
-let now = new Date()
-let till = new Date(2022, 11, 26, 2, 50, 0)
-let left_ms = new Date(till - now)
-if (till < now) {
+function done() {
     days_field.innerHTML = '00'
     hours_field.innerHTML = '00'
     minutes_field.innerHTML = '00'
@@ -42,8 +35,6 @@ if (till < now) {
                 duration: 1500,
                 easing: 'linear',
                 complete: function(a) {
-                    document.querySelector('.time-container').style.display = 'none'
-                    document.querySelector('h2').style.margin = 0
                     anime({
                         targets: '.done-container',
                         opacity: 1,
@@ -54,6 +45,20 @@ if (till < now) {
             })
         }
     })
+}
+
+let days_field = document.querySelector('.days')
+let hours_field = document.querySelector('.hours')
+let minutes_field = document.querySelector('.minutes')
+let seconds_field = document.querySelector('.seconds')
+
+let timer
+
+let now = new Date()
+let till = new Date(2022, 11, 26, 2, 50, 0)
+let left_ms = new Date(till - now)
+if (till < now) {
+    done()
 } else {
     let left_days = Math.floor(left_ms / 86400000)
     let left_hours = Math.floor((left_ms % 86400000) / 3600000)
@@ -65,8 +70,13 @@ if (till < now) {
     minutes_field.innerHTML = format_time(left_minutes)
     seconds_field.innerHTML = format_time(left_seconds)
 
-    setInterval(function() {
+    timer = setInterval(function() {
         left_seconds -= 1
+        if (left_seconds == 0 && left_minutes == 0 && left_hours == 0 && left_days == 0) {
+            done()
+            clearInterval(timer)
+            return 1
+        }
         seconds_field.innerHTML = format_time(left_seconds)
         if (left_seconds == -1) {
             left_seconds = 59
@@ -87,5 +97,7 @@ if (till < now) {
                 
             }
         }
+
+        
     }, 1000)
 }
