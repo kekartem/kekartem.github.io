@@ -100,7 +100,7 @@ leaf_container.appendChild(frog1)
 
 setInterval(function() {
     let new_leaf = randint(0, coords.length - 1)
-    while (new_leaf == current_leaf) {
+    while (new_leaf == current_leaf || new_leaf == current_leaf1) {
         new_leaf = randint(0, coords.length - 1)
     }
 
@@ -142,7 +142,7 @@ setInterval(function() {
     current_leaf = new_leaf
 
     let new_leaf1 = randint(0, coords.length - 1)
-    while (new_leaf1 == current_leaf1 || new_leaf1 == new_leaf) {
+    while (new_leaf1 == current_leaf1 || new_leaf1 == new_leaf || new_leaf1 == current_leaf) {
         new_leaf1 = randint(0, coords.length - 1)
     }
     let delay1 = randint(0, 2300)

@@ -94,10 +94,7 @@ if (till < now) {
                     left_days -= 1
                     days_field.innerHTML = format_time(left_days)
                 }
-                
             }
         }
-
-        
     }, 1000)
 }
