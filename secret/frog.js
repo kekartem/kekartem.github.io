@@ -42,7 +42,13 @@ let leaf_container = document.querySelector('.leaf-container')
 for (let i = 0; i < 10; i++) {
     let leaf = document.createElement('div')
     leaf.classList.add('leaf')
-    let left = randint(0, window_width - 70)
+    let left
+    if (i < 5) {
+        left = randint(0, window_width / 2 - 70)
+    } else {
+        left = randint(window_width / 2, window_width - 70)
+    }
+    left = randint(0, window_width - 70)
     let top = randint(0.35 * window_height, window_height - 70)
     let flag = false
     for(let i = 0; i < coords.length; i++) {
@@ -54,7 +60,11 @@ for (let i = 0; i < 10; i++) {
     let count = 0
     while (flag == true) {
         if (count == 50) { break }
-        left = randint(0, window_width - 70)
+        if (i < 5) {
+            left = randint(0, window_width / 2 - 70)
+        } else {
+            left = randint(window_width / 2, window_width - 70)
+        }
         top = randint(0.35 * window_height, window_height - 70)
         flag = false
         for(let i = 0; i < coords.length; i++) {
@@ -77,11 +87,14 @@ let frog = document.createElement('div')
 frog.classList.add('frog')
 frog.innerHTML = '<img src="frog.png">'
 frog.style.left = `${coords[current_leaf][0] + 10}px`
-frog.style.top = `${coords[current_leaf][1] + 5}px`
+frog.style.top = `${coords[current_leaf][1] + 3}px`
 leaf_container.appendChild(frog)
 
 setInterval(function() {
     let new_leaf = randint(0, coords.length - 1)
+    while (new_leaf == current_leaf) {
+        new_leaf = randint(0, coords.length - 1)
+    }
     anime({
         targets: '.frog',
         rotate: calc_rotate([coords[current_leaf][0] + 35, coords[current_leaf][1] + 35], [coords[new_leaf][0] + 35, coords[new_leaf][1] + 35]),
@@ -99,7 +112,7 @@ setInterval(function() {
             anime({
                 targets: '.frog',
                 left: `${coords[new_leaf][0] + 10}px`,
-                top: `${coords[new_leaf][1] + 10}px`,
+                top: `${coords[new_leaf][1] + 3}px`,
                 duration: 1000,
                 easing: 'linear',
                 complete: function(a) {

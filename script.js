@@ -13,6 +13,6 @@ const paths = {
 
 $('.card_arrow').on('click', function() {
     if ($(this).attr('id') != 9) {
-        window.location.href =paths[$(this).attr('id')];
+        window.location.href = paths[$(this).attr('id')];
     }
 });
