@@ -57,8 +57,8 @@ let timezoneoffset = new Date().getTimezoneOffset() * 60 * 1000 * -1
 let timer
 
 let now = new Date()
-let till = new Date(2022, 11, 26, 2, 50, 0)
-let left_ms = new Date(till - now) - timezoneoffset + 5 * 60 * 60 * 1000
+let till = new Date(2022, 10, 25, 21, 50, 0)
+let left_ms = new Date(till - now) - timezoneoffset
 if (till < now) {
     done()
 } else {
