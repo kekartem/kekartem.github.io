@@ -57,7 +57,7 @@ let timezoneoffset = new Date().getTimezoneOffset() * 60 * 1000 * -1
 let timer
 
 let now = new Date();
-let till = new Date('December 26, 2022 02:50:00 GMT+05:00')
+let till = new Date('December 26, 2022 02:59:59 GMT+05:00')
 let left_ms = new Date(till - now)
 if (till < now) {
     done()
