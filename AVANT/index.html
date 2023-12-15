@@ -21,7 +21,7 @@
     <nav>
         <p>О компании</p>
         <p>Каталог</p>
-        <div class="header-cta">Заказать проект</div>
+        <a href="#apply"><div class="header-cta">Заказать проект</div></a>
     </nav>
     <div class="profile-group">
         <div class="phone-group">
@@ -39,7 +39,7 @@
         <div class="cta-btn">Заказать проект</div>
     </section>
     <section class="about">
-        <h1>Ваши мечты о собственном доме станут реальностью с AVANT</h1>
+        <h1>Ваши мечты о собственном доме станут реальностью с ADAMANTO</h1>
         <div class="about-inner">
             <div class="about-inner-img">
                 
@@ -147,7 +147,7 @@
             Учитываем самые модные тенденции малоэтажных домостроений на сегодняшний день.
         </div>
     </section>
-    <section class="apply">
+    <section class="apply" id="apply">
         <div class="left">
             <img src="images/floating.png" alt="">
         </div>
@@ -226,14 +226,15 @@
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 <script>
 function scrolltoform() {
+    offset = this.getBoundingClientRect().center
     window.scrollTo({
-        top: form_offset,
+        top: `${offset}px`,
         left: 0,
         behavior: "smooth"
     })
 }
 let cta_form = document.querySelector('.right')
-let form_offset = parseInt(cta_form.getBoundingClientRect().top) - (window.innerHeight - parseInt(getComputedStyle(cta_form).height)) / 2
+
 
 document.querySelector('.header-cta').addEventListener('click', scrolltoform)
 document.querySelector('.footer-cta').addEventListener('click', scrolltoform)

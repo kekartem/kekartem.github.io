@@ -655,6 +655,9 @@ footer img {
     color: black;
 }
 
+.team-controls-row {
+    display: none;
+}
 
 @media (max-width: 1160px) {
     header {
@@ -1234,5 +1237,10 @@ footer img {
 
     .info {
         font-size: .9em
+    }
+
+
+    .location {
+        display: none;
     }
 }
