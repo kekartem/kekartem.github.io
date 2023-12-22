@@ -2,19 +2,25 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1800, initial-scale=10">
     <title>AVANT | Архитектурное бюро</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        console.log('l')
+        if (parseInt(window.innerWidth) < 1800) {
+            document.querySelector('meta[name="viewport"]').setAttribute("content", "width=device-width, initial-scale=1.0");
+        }   
+    </script>
 </head>
 <body>
 <header>
     <div class="logo-location-group">
         <div class="logo-group">
-            <img src="images/logo.png" alt="">
+            <img src="images/logo.webp" alt="">
             <p>ADAMANTO</p>
         </div>
         <div class="location">
-            <img src="images/map-pin.png" alt="">
+            <img src="images/map-pin.webp" alt="">
             <p>г. Казань</p>
         </div>
     </div>
@@ -25,7 +31,7 @@
     </nav>
     <div class="profile-group">
         <div class="phone-group">
-            <img src="images/phone.png" alt="">
+            <img src="images/phone.webp" alt="">
             <p>+7 937 625-36-30</p>
         </div>
     </div>
@@ -54,27 +60,27 @@
         <h1>Ценности ADAMANTO</h1>
         <div class="cards">
             <div class="card card1">
-                <img src="images/monitor.png" alt="">
+                <img src="images/monitor.webp" alt="">
                 <h2>Опыт работы в проектировании более 15 лет</h2>
                 <p>Спроектировано и построено более 100 домов.</p>
             </div>
             <div class="card card2">
-                <img src="images/interview.png" alt="">
+                <img src="images/interview.webp" alt="">
                 <h2>Интервью с заказчиком</h2>
                 <p>Для подробного изучения ваших желаний.</p>
             </div>
             <div class="card card3">
-                <img src="images/map-pin.png" alt="">
+                <img src="images/map-pin.webp" alt="">
                 <h2>Подробный анализ вашего участка</h2>
                 <p>Климатическое обоснование для выбора строительной технологии</p>
             </div>
             <div class="card card4">
-                <img src="images/visual.png" alt="">
+                <img src="images/visual.webp" alt="">
                 <h2>Профессиональноe выполнение работы с визуализацией</h2>
                 <p>От карандашного эскиза до полноценной проектной документацией с визуализацией.</p>
             </div>
             <div class="card card5">
-                <img src="images/sketch.png" alt="">
+                <img src="images/sketch.webp" alt="">
                 <h2>Сочетание строительного опыта с дизайнерским подходом</h2>
                 <p>Даёт возможность оптимального проектирования домов с учетом особенностей климата и соляризации участка, а так же определения точной сметной стоимости строительства.</p>
             </div>
@@ -83,15 +89,15 @@
     <section class="slider-group">
         <div class="slider-wrapper">
             <div class="slider">
-                <img src="images/slider/1.jpg" alt="">
-                <img src="images/slider/2.jpg" alt="">
-                <img src="images/slider/3.jpg" alt="">
-                <img src="images/slider/4.jpg" alt="">
-                <img src="images/slider/5.jpg" alt="">
+                <img src="images/slider/1.webp" alt="">
+                <img src="images/slider/2.webp" alt="">
+                <img src="images/slider/3.webp" alt="">
+                <img src="images/slider/4.webp" alt="">
+                <img src="images/slider/5.webp" alt="">
             </div>
             <div class="controls">
-                <div class="ar-lt"><img src="images/slider/ar-lt.png" alt=""></div>
-                <div class="ar-rt"><img src="images/slider/ar-rt.png" alt=""></div>
+                <div class="ar-lt"><img src="images/slider/ar-lt.webp" alt=""></div>
+                <div class="ar-rt"><img src="images/slider/ar-rt.webp" alt=""></div>
             </div>
             
         </div>
@@ -134,7 +140,7 @@
                 <div class="leaf-cover">
                     <h1>№ 1</h1>
                     <div class="leaf-img-container">
-                        <img src="images/work/1.png" alt="">
+                        <img src="images/work/1.webp" alt="">
                     </div>
                     <p>Анализ всего участка</p>
                 </div>
@@ -144,7 +150,7 @@
                 <div class="leaf-cover">
                     <h1>№ 2</h1>
                     <div class="leaf-img-container">
-                        <img src="images/work/2.png" alt="">
+                        <img src="images/work/2.webp" alt="">
                     </div>
                     <p>Анализ геологического исследования</p>
                 </div>
@@ -155,7 +161,7 @@
                 <div class="leaf-cover">
                     <h1>№ 3</h1>
                     <div class="leaf-img-container">
-                        <img src="images/work/3.png" alt="">
+                        <img src="images/work/3.webp" alt="">
                     </div>
                     <p>Подбор технологии строительства и площади здания</p>
                 </div>
@@ -165,7 +171,7 @@
                 <div class="leaf-cover">
                     <h1>№ 4</h1>
                     <div class="leaf-img-container">
-                        <img src="images/work/4.png" alt="">
+                        <img src="images/work/4.webp" alt="">
                     </div>
                     <p>Расработка эскизного проекта здания с учётом эргономики человека</p>
                 </div>
@@ -181,17 +187,21 @@
     </section>
     <section class="apply" id="apply">
         <div class="left">
-            <img src="images/floating.png" alt="">
+            <img src="images/floating.webp" alt="">
         </div>
         <div class="right">
             <div class="right-inner">
                 <h1>Получить бесплатную консультацию</h1>
                 <h2>Оставьте заявку</h2>
                 <form class="main-apply-form" action="">
-                    <input type="text" placeholder="Ваше имя" required>
-                    <input type="email" placeholder="Ваш email" required>
-                    <input type="text" placeholder="Ваш телефон" required>
-                    <textarea name="" id="" cols="30" rows="5" placeholder="Сообщение"></textarea>
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="email" name="email" placeholder="Ваш email" required>
+                    <input type="text" name="phonenumber" placeholder="Ваш телефон" required>
+                    <textarea name="message" id="" cols="30" rows="5" placeholder="Сообщение"></textarea>
+                    <div class="check-group">
+                        <input type="checkbox" class="check-input" name="catalog" placeholder="kek">
+                        <label class="check-label" for="catalog">Получить каталог</label>
+                    </div>
                     <button class="main-apply-form-btn">
                         Отправить заявку
                     </button>
@@ -240,29 +250,29 @@
         <div class="popup">
             <h1>1</h1>
             <div class="popup-text"></div>
-            <div class="close"><img src="images/cross.png" alt=""></div>
+            <div class="close"><img src="images/cross.webp" alt=""></div>
         </div>
     </div>
 </main>
 <footer>
     <div class="footer-inner">
-        <div class="footer-img"><img src="images/logo-name.png" alt=""></div>
+        <div class="footer-img"><img src="images/logo-name.webp" alt=""></div>
         <div class="footer-menu">
             <div class="footer-cta">Заказать проект</div>
-            <p>О компании</p>
+            <p>Услуги</p>
             <p>Каталог</p>
         </div>
         <div class="contact-group">
-            <p><img src="images/phone.png" alt="">avaaant.ru@gmail.com</p>
-            <p><img src="images/phone.png" alt="">+7 937 625-36-30</p>
-            <p><img src="images/map-pin.png" alt="">г. Казань</p>
+            <p><img src="images/phone.webp" alt="">avaaant.ru@gmail.com</p>
+            <p><img src="images/phone.webp" alt="">+7 937 625-36-30</p>
+            <p><img src="images/map-pin.webp" alt="">г. Казань</p>
         </div>
     </div>
     <div class="credits">
         Designed by <a href="https://t.me/k_volchihina" target="_blank">@k_volchihina</a> | Developed by <a href="https://t.me/kekartem" target="_blank">@kekartem</a>
     </div>
 </footer>
-<div class="aliya"><img src="images/aliya.png"></div>
+<div class="aliya"><img src="images/aliya.webp"></div>
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 <!-- Easter-egg -->
 <script>
@@ -289,7 +299,7 @@ aliya.addEventListener('click', function() {
     })
 })
 </script>
-<!-- TODO Smooth scroll to form -->
+<!-- Smooth scroll to form -->
 <script>
 function scrolltoform() {
     let cta_form = document.querySelector('.right')
@@ -299,6 +309,22 @@ function scrolltoform() {
 document.querySelector('.header-cta').addEventListener('click', scrolltoform)
 document.querySelector('.footer-cta').addEventListener('click', scrolltoform)
 document.querySelector('.cta-btn').addEventListener('click', scrolltoform)
+document.querySelector('.slider-btn').addEventListener('click', scrolltoform)
+
+function scrolltoservices() {
+    let services = document.querySelector('.services-card')
+    services.scrollIntoView({behavior: "smooth", block: "center", inline: "start"})
+}
+
+let nav_buttons = document.querySelector('header').querySelector('nav').querySelectorAll('p')
+
+nav_buttons[0].addEventListener('click', scrolltoservices)
+nav_buttons[1].addEventListener('click', scrolltoform)
+
+let footer_buttons = document.querySelector('.footer-menu').querySelectorAll('p')
+
+footer_buttons[0].addEventListener('click', scrolltoservices)
+footer_buttons[1].addEventListener('click', scrolltoform)
 </script>
 <!-- Adjust cover heading font size -->
 <script>
@@ -341,7 +367,7 @@ var amount_images = 5
 let loadedImages = 0
 let images_raw = []
 for (let i = 1; i <= amount_images; i++) {
-    images_raw.push(`${i}.jpg`)
+    images_raw.push(`${i}.webp`)
 }
 
 images_raw.forEach(image => {

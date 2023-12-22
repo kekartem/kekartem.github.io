@@ -10,6 +10,7 @@ body {
     font-weight: 300;
     font-size: 16px;
     position: relative;
+    max-width: 1800px;
 }
 
 header {
@@ -49,10 +50,11 @@ header p {
 
 .logo-group p {
     margin: 0;
+    font-family: 'Playfair Display SC', serif;
 }
 
 .logo-group img {
-    width: 75px;
+    width: 3.5rem;
 }
 
 .logo-location-group {
@@ -84,6 +86,9 @@ nav {
     margin-right: 32px;
 }
 
+nav p {
+    cursor: pointer;
+}
 .profile-group {
     align-items: center;
     display: flex;
@@ -113,7 +118,7 @@ main {
 
 .cover {
     width: 100%;
-    background: url(images/main-cover.png);
+    background: url(images/main-cover.webp);
     background-size: cover;
     border-radius: 40px;
     display: flex;
@@ -181,7 +186,7 @@ main {
     height: 100%;
     border-bottom-left-radius: 12px;
     border-top-left-radius: 12px;
-    background: url(images/about.png);
+    background: url(images/about.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -305,6 +310,7 @@ main {
     margin-top: 48px;
     font-size: 1.2em;
     font-weight: 300;
+    cursor: pointer;
 }
 
 .services {
@@ -518,7 +524,7 @@ main {
 }
 
 .team-card-1 {
-    background: url(images/team/1.png);
+    background: url(images/team/1.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -633,6 +639,10 @@ footer img {
     margin-left: 32px;
 }
 
+.footer-menu p {
+    cursor: pointer;
+}
+
 .footer-cta {
     background: transparent;
     border: 1px solid black;
@@ -738,6 +748,18 @@ footer img {
     margin-top: .5em
 }
 
+.check-group {
+    display: flex;
+    width: fit-content;
+    white-space: nowrap;
+    gap: 16px;
+}
+
+.check-group input {
+    width: 1em;
+}
+
+
 .close {
     width: 16px; height: 16px;
     position: absolute;
@@ -761,6 +783,16 @@ footer img {
 .leaf-content {
     display: none;
 }
+/* @media (min-width: 1800px) {
+    * {
+        font-size: 32px !important;
+    }
+    header {
+        height: auto;
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+    }
+} */
 
 @media (max-width: 1160px) {
     header {
@@ -1078,7 +1110,7 @@ footer img {
     }
 
     .leaf_1 {
-        background: url(images/work/1.png);
+        background: url(images/work/1.webp);
         background-size: cover;
         background-repeat: no-repeat;
         display: flex;
@@ -1087,7 +1119,7 @@ footer img {
     }
 
     .leaf_2 {
-        background: url(images/work/2.png);
+        background: url(images/work/2.webp);
         background-size: cover;
         background-repeat: no-repeat;
         display: flex;
@@ -1097,7 +1129,7 @@ footer img {
 
     .leaf_3 {
         background-position: center;
-        background: url(images/work/3.png);
+        background: url(images/work/3.webp);
         background-size: cover;
         background-repeat: no-repeat;
         display: flex;
@@ -1106,7 +1138,7 @@ footer img {
     }
 
     .leaf_4 {
-        background: url(images/work/4.png);
+        background: url(images/work/4.webp);
         background-size: cover;
         background-repeat: no-repeat;
         display: flex;
@@ -1370,5 +1402,6 @@ footer img {
 
     .popup {
         font-size: .8em;
+        width: 90%;
     }
 }
