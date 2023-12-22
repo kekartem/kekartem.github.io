@@ -19,9 +19,9 @@
         </div>
     </div>
     <nav>
-        <p>О компании</p>
+        <p>Услуги</p>
         <p>Каталог</p>
-        <a href="#apply"><div class="header-cta">Заказать проект</div></a>
+        <div class="header-cta">Заказать проект</div>
     </nav>
     <div class="profile-group">
         <div class="phone-group">
@@ -51,22 +51,32 @@
         </div>
     </section>
     <section class="adv">
-        <h1>Почему выбирают AVANT</h1>
+        <h1>Ценности ADAMANTO</h1>
         <div class="cards">
-            <div class="card card-tech">
+            <div class="card card1">
                 <img src="images/monitor.png" alt="">
-                <h2>Современные технологии</h2>
-                <p>Мы применим VR очки с дополненной реальностью для полного представление объекта.</p>
+                <h2>Опыт работы в проектировании более 15 лет</h2>
+                <p>Спроектировано и построено более 100 домов.</p>
             </div>
-            <div class="card card-location">
+            <div class="card card2">
+                <img src="images/interview.png" alt="">
+                <h2>Интервью с заказчиком</h2>
+                <p>Для подробного изучения ваших желаний.</p>
+            </div>
+            <div class="card card3">
                 <img src="images/map-pin.png" alt="">
-                <h2>Удобное местоположение</h2>
-                <p>Наш офис находится по адресу г. Казань, ул. Вишневского 26А.</p>
+                <h2>Подробный анализ вашего участка</h2>
+                <p>Климатическое обоснование для выбора строительной технологии</p>
             </div>
-            <div class="card card-price">
-                <img src="images/dollar-sign.png" alt="">
-                <h2>Доступные цены</h2>
-                <p>Здесь что-то про цены.</p>
+            <div class="card card4">
+                <img src="images/visual.png" alt="">
+                <h2>Профессиональноe выполнение работы с визуализацией</h2>
+                <p>От карандашного эскиза до полноценной проектной документацией с визуализацией.</p>
+            </div>
+            <div class="card card5">
+                <img src="images/sketch.png" alt="">
+                <h2>Сочетание строительного опыта с дизайнерским подходом</h2>
+                <p>Даёт возможность оптимального проектирования домов с учетом особенностей климата и соляризации участка, а так же определения точной сметной стоимости строительства.</p>
             </div>
         </div>
     </section>
@@ -91,54 +101,76 @@
     <section class="services">
         <h1>Спектр услуг</h1>
         <div class="services-card">
-            <div class="service">
+            <div class="service" id="s1">
+                <h3>Эскизное проектирование</h3>
+                <p>250 ₽/ м²</p>
+            </div>
+            <div class="service" id="s2">
                 <h3>Архитектурное решение</h3>
                 <p>800 ₽/ м²</p>
             </div>
-            <div class="service">
+            <div class="service" id="s3">
+                <h3>Конструктивные решения</h3>
+                <p>1000 ₽/ м²</p>
+            </div>
+            <div class="service" id="s4">
                 <h3>3D-визуализация</h3>
                 <p>300 ₽/ м²</p>
             </div>
-            <div class="service">
+            <div class="service" id="s5">
                 <h3>Интерьерное решение</h3>
-                <p>1000 ₽/ м²</p>
+                <p>2500 ₽/ м²</p>
             </div>
-            <div class="service">
-                <h3>Конструктивное решение</h3>
-                <p>1000 ₽/ м²</p>
-            </div>
-            <div class="service">
+            <div class="service" id="s6">
                 <h3>Контроль и сопровождение строительства</h3>
                 <p>1.5% от сметной стоимости материалов</p>
-            </div>
-            <div class="service">
-                <h3>Эскизное проектирование</h3>
-                <p>250 ₽/ м²</p>
             </div>
         </div>
     </section>
     <section class="work">
         <h1>Как мы работаем</h1>
         <div class="leaves">
-            <div class="leaf leaf_1">
-                <h1>№ 1</h1>
-                <img src="images/work/1.png" alt="">
-                <p>Анализ всего участка</p>
+            <div class="leaf leaf_1" id="l1" data-toggled="0">
+                <div class="leaf-cover">
+                    <h1>№ 1</h1>
+                    <div class="leaf-img-container">
+                        <img src="images/work/1.png" alt="">
+                    </div>
+                    <p>Анализ всего участка</p>
+                </div>
+                <div class="leaf-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem illum explicabo nostrum, laborum sint neque similique beatae voluptas ipsum ipsam magnam pariatur, magni expedita labore sit iure nam quis. Neque.</div>
             </div>
-            <div class="leaf leaf_2">
-                <h1>№ 2</h1>
-                <img src="images/work/2.png" alt="">
-                <p>Анализ геологического исследования</p>
+            <div class="leaf leaf_2" id="l2" data-toggled="0">
+                <div class="leaf-cover">
+                    <h1>№ 2</h1>
+                    <div class="leaf-img-container">
+                        <img src="images/work/2.png" alt="">
+                    </div>
+                    <p>Анализ геологического исследования</p>
+                </div>
+                <div class="leaf-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem illum explicabo nostrum, laborum sint neque similique beatae voluptas ipsum ipsam magnam pariatur, magni expedita labore sit iure nam quis. Neque.</div>
+            
             </div>
-            <div class="leaf leaf_3">
-                <h1>№ 3</h1>
-                <img src="images/work/3.png" alt="">
-                <p>Подбор технологии строительства и площади здания</p>
+            <div class="leaf leaf_3" id="l3" data-toggled="0">
+                <div class="leaf-cover">
+                    <h1>№ 3</h1>
+                    <div class="leaf-img-container">
+                        <img src="images/work/3.png" alt="">
+                    </div>
+                    <p>Подбор технологии строительства и площади здания</p>
+                </div>
+                <div class="leaf-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem illum explicabo nostrum, laborum sint neque similique beatae voluptas ipsum ipsam magnam pariatur, magni expedita labore sit iure nam quis. Neque.</div>
             </div>
-            <div class="leaf leaf_4">
-                <h1>№ 4</h1>
-                <img src="images/work/4.png" alt="">
-                <p>Расработка эскизного проекта здания с учётом эргономики человека</p>
+            <div class="leaf leaf_4" id="l4" data-toggled="0">
+                <div class="leaf-cover">
+                    <h1>№ 4</h1>
+                    <div class="leaf-img-container">
+                        <img src="images/work/4.png" alt="">
+                    </div>
+                    <p>Расработка эскизного проекта здания с учётом эргономики человека</p>
+                </div>
+                <div class="leaf-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem illum explicabo nostrum, laborum sint neque similique beatae voluptas ipsum ipsam magnam pariatur, magni expedita labore sit iure nam quis. Neque.</div>
+            
             </div>
         </div>
     </section>
@@ -157,7 +189,7 @@
                 <h2>Оставьте заявку</h2>
                 <form class="main-apply-form" action="">
                     <input type="text" placeholder="Ваше имя" required>
-                    <input type="text" placeholder="Ваш email" required>
+                    <input type="email" placeholder="Ваш email" required>
                     <input type="text" placeholder="Ваш телефон" required>
                     <textarea name="" id="" cols="30" rows="5" placeholder="Сообщение"></textarea>
                     <button class="main-apply-form-btn">
@@ -204,6 +236,13 @@
     <section class="map">
         <div style="position:relative;overflow:hidden;"><iframe src="https://yandex.uz/map-widget/v1/?ll=49.146223%2C55.780260&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjI2NDQ2MxJs0KDQvtGB0YHQuNGPLCDQoNC10YHQv9GD0LHQu9C40LrQsCDQotCw0YLQsNGA0YHRgtCw0L0sINCa0LDQt9Cw0L3RjCwg0YPQu9C40YbQsCDQktC40YjQvdC10LLRgdC60L7Qs9C-LCAyNtCQIgoNvZREQhXJHl9C&z=16.31" style="border-radius: 20px;" width="100%" height="500" frameborder="0" allowfullscreen="true" style="position:relative;"></iframe></div>
     </section>
+    <div class="popup-container">
+        <div class="popup">
+            <h1>1</h1>
+            <div class="popup-text"></div>
+            <div class="close"><img src="images/cross.png" alt=""></div>
+        </div>
+    </div>
 </main>
 <footer>
     <div class="footer-inner">
@@ -223,23 +262,45 @@
         Designed by <a href="https://t.me/k_volchihina" target="_blank">@k_volchihina</a> | Developed by <a href="https://t.me/kekartem" target="_blank">@kekartem</a>
     </div>
 </footer>
+<div class="aliya"><img src="images/aliya.png"></div>
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+<!-- Easter-egg -->
+<script>
+let aliya = document.querySelector('.aliya')
+let aliya_img = aliya.querySelector('img')
+aliya.addEventListener('click', function() {
+    anime({
+        targets: aliya_img,
+        scale: 1,
+        rotate: 20,
+        duration: 1000,
+        opacity: 1,
+        complete: function() {
+            setTimeout(function() {
+                anime({
+                    targets: aliya_img,
+                    scale: 0.2,
+                    rotate: 0,
+                    duration: 1000,
+                    opacity: 0,
+                })
+            }, 1000)
+        }
+    })
+})
+</script>
+<!-- TODO Smooth scroll to form -->
 <script>
 function scrolltoform() {
-    offset = this.getBoundingClientRect().center
-    window.scrollTo({
-        top: `${offset}px`,
-        left: 0,
-        behavior: "smooth"
-    })
+    let cta_form = document.querySelector('.right')
+    cta_form.scrollIntoView({behavior: "smooth", block: "center", inline: "start"})
 }
-let cta_form = document.querySelector('.right')
-
 
 document.querySelector('.header-cta').addEventListener('click', scrolltoform)
 document.querySelector('.footer-cta').addEventListener('click', scrolltoform)
 document.querySelector('.cta-btn').addEventListener('click', scrolltoform)
 </script>
+<!-- Adjust cover heading font size -->
 <script>
 let cover = document.querySelector('.cover')
 let cover_heading = cover.querySelector('h1')
@@ -251,12 +312,13 @@ if (parseInt(getComputedStyle(cover_heading).width) >= parseInt(getComputedStyle
     }
     cover_heading.style.lineHeight = `${fontsize}px`
 }
+
 </script>
+<!-- Teams members switch buttons -->
 <script>
 let buttons = document.querySelectorAll('.team-controls-btn');
 let screen_width = window.innerWidth
 i = 0
-console.log(window.innerWidth)
 buttons.forEach(function(item) {
     item.addEventListener('click', function() {
         document.querySelector('.team-selected').classList.remove('team-selected')
@@ -271,7 +333,7 @@ buttons.forEach(function(item) {
     i += 1
 })
 </script>
-<!-- slider script -->
+<!-- Slider script -->
 <script>
 // Загрузка картинок для корректной работы анимациии
 var amount_images = 5
@@ -291,7 +353,6 @@ images_raw.forEach(image => {
 let timer = setInterval(function() {
     if (loadedImages == images_raw.length) {
         clearInterval(timer)
-        console.log('done')
         main()
     }
 }, 10)
@@ -301,7 +362,6 @@ function main() {
     let slider = document.querySelector('.slider')
     let slider_images = slider.querySelectorAll('img')
     let widths = []
-    console.log(widths)
     let full_width = parseInt(getComputedStyle(document.querySelector('.slider')).width)
 
     slider_images.forEach(function(image) {
@@ -356,5 +416,144 @@ function main() {
     })
 }
 </script>
+<!-- Popup window -->
+<script>
+    let id_to_description = {
+        's1': '<p>— это единственный способ, заранее оценить и получить полное видение  об проектируемом доме. На этом этапе планируется вид дома, определяются его формы, архитектурный стиль, внутреннее устройство и внешний облик дома. Этот этап позволяет избежать многих сложностей в ходе дальнейшего проектирования.</p><p>На основе разработанной концепции здания и точно сформированного технического задания производится дальнейшая отработка планов в полном объеме в рамках архитектурного или строительного проекта.</p>',
+        's2': '<p>— это часть комплекса работ по проектированию, направленная на создание документации, нужной для строительства или реконструкции объекта. Данный раздел решает следующие основные задачи:</p><ul><li>Детальная проработка внешнего вида объекта;</li><li>Выбор подходящих вариантов наружной и внутренней отделки фасадов и помещений;</li><li>Разработка планировочных, функциональных и организационных решений.</li></ul>',
+        's3': '<p>позволяют ответить на вопрос, каким образом необходимо построить новое здание, чтобы оно отвечало требованиям безопасности, прочности и комфорта при эксплуатации.</p><p>В основе подготовки раздела КП лежат точные инженерные расчеты, выполняемые при задействовании совершенного программного обеспечения.</p>',
+        's4': '<p>— это процесс создания трехмерной модели пространства при помощи формы и цвета. Фотореалистичная 3D-картинка покажет, как сочетаются между собой материалы, мебель и декор.</p><p>Визуализация дизайн-проекта позволяет понять, как будет выглядеть ваш дом после окончания ремонтных работ и какого результата добиваться от подрядчиков.</p>',
+        's5': '<p>Вы обретаете четкое понимание того, каким должен быть идеальный дом. Обеспечиваете гармоничность и практичность интерьера навсегда.</p>',
+        's6': '<p>Чтобы  сэкономить ваши деньги, необходим авторский надзор для контроля воплощения проекта во время строительства.',
+    }
+    let popup_container = document.querySelector('.popup-container')
+    let popup = document.querySelector('.popup')
+    let services = document.querySelectorAll('.service')
+    services.forEach(function(service) {
+        let service_id = service.getAttribute('id')
+        let service_name = service.querySelector('h3').innerHTML
+        let service_description = id_to_description[service_id]
+        service.addEventListener('click', function() {
+            popup.querySelector('h1').innerHTML = service_name
+            popup.querySelector('.popup-text').innerHTML = service_description
+            popup_container.style.display = 'flex'
+            anime({
+                targets: popup_container,
+                opacity: 1,
+                easing: 'easeInOutQuad',
+                duration: 500,
+            })
+        })
+    })
+
+    popup_container.addEventListener('click', function(e) {
+        if (e.target !== this) {
+            return
+        }
+        anime({
+            targets: popup_container,
+            opacity: 0,
+            easing: 'easeInOutQuad',
+            duration: 200,
+            complete: function() {
+                popup_container.style.display = 'none'
+            }
+        })
+    })
+
+    document.querySelector('.close').addEventListener('click', function() {
+        anime({
+            targets: popup_container,
+            opacity: 0,
+            easing: 'easeInOutQuad',
+            duration: 200,
+            complete: function() {
+                popup_container.style.display = 'none'
+            }
+        })
+    })
+
+    document.addEventListener('keydown', function(e) {
+        if (event.key == 'Escape') {
+            anime({
+                targets: popup_container,
+                opacity: 0,
+                easing: 'easeInOutQuad',
+                duration: 200,
+                complete: function() {
+                    popup_container.style.display = 'none'
+                }
+            }) 
+        }
+    })
+</script>
+<!-- Work script -->
+<script>
+
+let leaf_id_to_description = {
+    'l1': '<p>Анализ всего участка подразумевает то-то и то-то lorem ispum lorem ispum lorem ispum lorem ispum</p>',
+    'l2': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi corrupti debitis labore repellendus excepturi similique expedita sapiente recusandae. Dolores quod aperiam id sequi ex consequuntur quos totam accusantium provident inventore.',
+    'l3': '',
+    'l4': '',
+}
+let leaves = document.querySelectorAll('.leaf')
+let i = 0
+let leaf_height = parseInt(getComputedStyle(document.querySelector('.leaf-cover')).height)
+
+if (window.innerWidth <= 600) {
+    for (let i = 0; i < 4; i++) {
+        let leaf = leaves[i]
+        leaf.querySelector('.leaf-content').innerHTML = leaf_id_to_description[leaf.getAttribute('id')]
+        let leaf_max_height = parseInt(getComputedStyle(leaf).height)
+        leaf.style.height = `${parseInt(getComputedStyle(leaf.querySelector('.leaf-cover')).height)}px`
+        leaf.addEventListener('click', function() {
+            if (leaf.getAttribute('data-toggled') == 0) {
+                anime({
+                    targets: leaf,
+                    height: leaf_max_height,
+                    duration: 300,
+                    easing: 'linear',
+                })
+                for (j = 0; j < 4; j++) {
+                    if (leaves[j].dataset.toggled == 1) {
+                        anime({
+                            targets: leaves[j],
+                            height: parseInt(getComputedStyle(leaves[j].querySelector('.leaf-cover')).height),
+                            duration: 300,
+                            easing: 'linear',
+                        })
+                        leaves[j].dataset.toggled = 0
+                    }
+                }
+                leaf.dataset.toggled = 1
+            } else {
+                anime({
+                    targets: leaf,
+                    height: parseInt(getComputedStyle(leaf.querySelector('.leaf-cover')).height),
+                    duration: 300,
+                    easing: 'linear',
+                })
+                leaf.dataset.toggled = 0
+            }
+        })
+    }
+} else {
+    leaves.forEach(function(item) {
+        item.querySelector('.leaf-content').innerHTML = leaf_id_to_description[item.getAttribute('id')]
+        item.querySelector('img').addEventListener('click', function() {
+            popup.querySelector('h1').innerHTML = item.querySelector('.leaf-cover').querySelector('p').innerHTML
+            popup.querySelector('.popup-text').innerHTML = item.querySelector('.leaf-content').innerHTML
+            popup_container.style.display = 'flex'
+            anime({
+                targets: popup_container,
+                opacity: 1,
+                easing: 'easeInOutQuad',
+                duration: 500,
+            })
+        })
+    })
+}
+</script>
 </body>
+
 </html>

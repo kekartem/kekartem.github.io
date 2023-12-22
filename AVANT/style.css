@@ -9,6 +9,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     font-size: 16px;
+    position: relative;
 }
 
 header {
@@ -34,7 +35,8 @@ header p {
     border: 1px solid black;
     border-radius: 8px;
     padding: 8px 16px;
-    width: fit-content; font-size: .9em
+    width: fit-content; font-size: .9em;
+    cursor: pointer;
 }
 
 .logo-group {
@@ -216,8 +218,11 @@ main {
 .cards {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 32px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+        "a a b b c c"
+        "d d d e e e";
+    gap: 32px;
     margin-top: 64px;
 }
 
@@ -227,6 +232,12 @@ main {
     padding: 32px;
     box-sizing: border-box;
 }
+
+.card1 { grid-area: a }
+.card2 { grid-area: b }
+.card3 { grid-area: c }
+.card4 { grid-area: d }
+.card5 { grid-area: e }
 
 .card img {
     height: 80px;
@@ -327,6 +338,7 @@ main {
     text-align: center;
     flex-direction: column;
     gap: 2em;
+    cursor: pointer;
 }
 
 .service:hover {
@@ -355,10 +367,18 @@ main {
     margin-top: 16px;
 }
 
+.leaf-img-container {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
 .leaf img {
     border-top-right-radius: 30px;
     border-bottom-left-radius: 30px;
     width: 100%;
+    cursor: pointer;
 }
 
 .leaf h1 {
@@ -451,6 +471,7 @@ main {
     font-family: 'Montserrat', sans-serif;
     margin-top: 8px;
     margin-bottom: 16px;
+    cursor: pointer;
 }
 
 .apply-form-caption {
@@ -618,6 +639,7 @@ footer img {
     border-radius: 8px;
     padding: 1em 2em;
     width: fit-content;
+    cursor: pointer;
 }
 
 .contact-group {
@@ -656,6 +678,87 @@ footer img {
 }
 
 .team-controls-row {
+    display: none;
+}
+
+.aliya {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.aliya img {
+    width: 100%;
+    opacity: 0;
+    transform: scale(0.2);
+}
+
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    display: none;
+    z-index: 3;
+}
+
+.popup {
+    width: min(50vw, 80vh);
+    height: min(50vw, 80vh, fit-content);
+    background: white;
+    padding: 48px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.popup ul li {
+    margin: .5em .5em .5em 1em
+}
+
+.popup h1 {
+    margin-bottom: 1em;
+}
+
+.popup-text {
+    line-height: 1.4em;
+}
+
+.popup-text p {
+    margin-top: .5em
+}
+
+.close {
+    width: 16px; height: 16px;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    cursor: pointer;
+}
+
+.close:hover {
+    transform: scale(1.08);
+}
+
+.close:active {
+    transform: scale(1);
+}
+
+.close img {
+    width: 100%;
+}
+
+.leaf-content {
     display: none;
 }
 
@@ -758,7 +861,10 @@ footer img {
     .about-inner {
         width: 90%;
     }
-
+    
+    .popup {
+        width: 80%;
+    }
 
 }
 
@@ -771,9 +877,11 @@ footer img {
     .cards {
         gap: 16px;
         grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, fir-content);
         grid-template-areas:
-            "a a"
-            "b c";
+            "a b"
+            "c d"
+            "e e";
         width: 100%;
     }
 
@@ -929,7 +1037,7 @@ footer img {
 
     .leaves {
         display: grid;
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-rows: repeat(4, auto);
         grid-template-columns: 1fr;
     }
     .leaf img {
@@ -938,16 +1046,31 @@ footer img {
     }
 
     .leaf {
+        width: 100%;
         display: flex;
+        flex-direction: column;
+        position: relative;
+        color: white;
+        box-sizing: border-box;
+        overflow: hidden;
         height: auto;
-        background-position: center;
-        justify-content: flex-start;
-        align-items: center;
+    }
+
+    .leaf-cover {
+        display: flex;
         padding: .5em 1em;
         font-size: .9em;
         gap: .9em;
-        position: relative;
-        color: white;
+        justify-content: flex-start;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .leaf-content {
+        padding: .9em 1em;
+        box-sizing: border-box;
+        display: block;
+        font-size: .9em
     }
 
     .leaf p {
@@ -1009,7 +1132,7 @@ footer img {
         right: 0;
         bottom: 0;
         background: rgba(0,0,0,.5);
-        z-index: 2;
+        z-index: 0;
     }
 
     .leaf * {
@@ -1122,7 +1245,8 @@ footer img {
 
     .cta-btn {
         margin-top: 32px;
-        padding: 1em 2em
+        padding: 1em 2em;
+        cursor: pointer;
     }
 
     h1 {
@@ -1172,6 +1296,7 @@ footer img {
     .work h1,
     .team h1 {
         font-weight: 500;
+        font-size: 1.2em
     }
 
     .service {
@@ -1239,8 +1364,11 @@ footer img {
         font-size: .9em
     }
 
-
     .location {
         display: none;
+    }
+
+    .popup {
+        font-size: .8em;
     }
 }
