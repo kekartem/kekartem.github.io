@@ -406,6 +406,10 @@ main {
     padding-top: 32px;
 }
 
+.check-label {
+    color: black
+}
+
 .left {
     background-color: #763A0B;
     width: 35%;
