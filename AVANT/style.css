@@ -210,14 +210,82 @@ main {
     margin-bottom: 1em;
 }
 
-.adv {
+.tech {
     margin-top: 96px;
     padding: 0 64px;
     box-sizing: border-box;
 }
 
-.adv h1 {
-    font-size: 2em;
+
+.tech-heading {
+    background: #FFF2DE;
+    width: 100vw;
+    margin-left: -128px;
+    padding: 12px;
+    padding-left: 128px;
+    box-sizing: border-box;
+}
+
+.tech-cards {
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    gap: 28px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    margin-top: 3em;
+}
+
+.tech-card {
+    border: 1px solid #763A0B;
+    border-radius: 8px;
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.tech-card-img-container {
+    width: 100%;
+    border-radius: 8px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.tech-card h3 {
+    margin-bottom: 16px;
+}
+
+.tech-learn-more {
+    color: #763A0B;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 24px;
+}
+
+.tech-learn-more a {
+    color: #763A0B;
+    text-decoration: underline;
+}
+
+.tech-learn-more a:hover {
+    text-decoration: none;
+}
+
+.tech-learn-more img {
+    height: 1em;
+}
+
+.tech-card-img-container img {
+    width: 100%;
+}
+
+.adv {
+    margin-top: 96px;
+    padding: 0 64px;
+    box-sizing: border-box;
 }
 
 .cards {
@@ -304,7 +372,7 @@ main {
 .slider-btn {
     background-color: #763A0B;
     border-radius: 8px;
-    padding: 24px 48px;
+    padding: 1em 1em;
     width: fit-content;
     color: white;
     margin-top: 48px;
@@ -819,6 +887,10 @@ footer img {
         padding: 0 32px;
     }
 
+    .tech {
+        padding: 0 32px;
+    }
+
     .adv {
         padding: 0 32px;
     }
@@ -854,6 +926,11 @@ footer img {
     footer {
         padding: 32px 32px 16px 32px;
     }
+
+    .tech-heading {
+        margin-left: -64px;
+        padding-left: 64px;
+    }
 }
 
 @media (max-width: 900px) {
@@ -869,8 +946,20 @@ footer img {
         gap: 16px;
     }
     
+    .tech {
+        padding: 0;
+    }
+
+    .tech-cards {
+        gap: 10px;
+    }
+
     .adv {
         padding: 0;
+    }
+
+    .cards {
+        gap: 10px;
     }
 
     .services {
@@ -902,6 +991,11 @@ footer img {
         width: 80%;
     }
 
+    .tech-heading {
+        margin-left: -32px;
+        padding-left: 32px;
+    }
+
 }
 
 @media (max-width: 850px) {
@@ -911,7 +1005,7 @@ footer img {
     }
 
     .cards {
-        gap: 16px;
+        gap: 10px;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, fir-content);
         grid-template-areas:
@@ -940,6 +1034,12 @@ footer img {
     .about-inner-info {
         padding: 2em;
     }
+
+    .tech-cards {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+
 }
 
 
@@ -1002,6 +1102,7 @@ footer img {
     .slider-btn {
         margin-top: 16px;
     }
+
 }
 
 @media (max-width: 650px) {
@@ -1059,8 +1160,25 @@ footer img {
 }
 
 @media (max-width: 600px) {
-    .about-inner {
+    .about {
         display: none;
+    }
+
+    .tech {
+        margin-top: 3em;
+        margin-bottom: 64px;
+    }
+
+    .services {
+        margin-top: 64px;
+    }
+
+    .work {
+        margin-top: 64px;
+    }
+
+    .team-grid {
+        padding-top: 32px;
     }
 
     .about h1 {
@@ -1323,6 +1441,46 @@ footer img {
     .right {
         padding-left: 16px;
         padding-right: 16px;
+    }
+    .tech {
+        padding: 0 16px;
+    }
+
+    .tech-cards {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tech-card h3 {
+        margin-bottom: 0;
+    }
+
+    .tech-card-img-container {
+        aspect-ratio: 16 / 8;
+    }
+
+    .tech-heading {
+        margin-left: -16px;
+        padding-left: 16px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .tech-description p {
+        display: none;
+    }
+
+    .tech-learn-more {
+        margin-top: 0;
+    }
+    
+    .tech-description {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .tech-learn-more h4 {
+        display: none;
     }
 }
 
