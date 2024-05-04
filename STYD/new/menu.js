@@ -58,20 +58,3 @@ for (let i = 0; i < covers.length; i++) {
     covers[i].style.backgroundSize = 'cover'
     covers[i].style.backgroundPosition = 'center center'
 }
-
-
-let locations_temp = {
-    '1': '/STYD/new/index.html',
-    '2': '#',
-    '3': '/STYD/new/music.html',
-    '4': '/STYD/new/lyrics.html',
-    '5': '#',
-    '6': '#'
-}
-
-let menu_temp = document.querySelectorAll('.menu-item')
-menu_temp.forEach(e => {
-    e.addEventListener('click', function() {
-        window.location.href = locations_temp[e.getAttribute('id')]
-    })
-})
