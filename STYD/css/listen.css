@@ -1,0 +1,49 @@
+body {
+    overflow: visible
+}
+
+header {
+    background: #CC3133;
+}
+
+footer {
+    background: #CC3133;
+}
+
+.heading {
+    text-indent: -.3rem;
+}
+
+.container {
+    width: 100vw;
+    min-height: 10vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.inner {
+    width: 76vw;
+    display: flex;
+    flex-shrink: 0;
+    flex-grow: 0;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.playlist {
+    width: 20vw;
+    height: 20vw;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-right: 4em;
+    margin-bottom: 4em;
+}
+
+.playlist img {
+    width: 100%;
+    height: 100%;
+}
+

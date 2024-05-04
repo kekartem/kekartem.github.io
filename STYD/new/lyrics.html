@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тексты & аккорды</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="lyrics.css">
+    <script src="https://kit.fontawesome.com/f77600b8df.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- <div class="songs"></div> -->
+    <div class="container">
+        <p class="logo-styd">Испанский Стыд</p>
+        <div class="search-wrapper">
+            <div class="search-group">
+                <input type="text" placeholder="Поиск текстов песен" class="search-bar">
+                <div class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+            <div class="search-result"></div>
+        </div>
+        <div class="lyrics"></div>
+    </div>
+    <div class="menu">
+        <div class="menu-item">
+            <h1>Главная</h1>
+            <div class="cover"></div>
+        </div>
+        <div class="menu-item">
+            <h1>Концерты</h1>
+            <div class="cover"></div>
+        </div>
+        <div class="menu-item">
+            <h1>Музыка</h1>
+            <div class="cover"></div>
+        </div>
+        <div class="menu-item">
+            <h1>Текст</h1>
+            <div class="cover"></div>
+        </div>
+        <div class="menu-item">
+            <h1>Аккорды</h1>
+            <div class="cover"></div>
+        </div>
+        <div class="menu-item">
+            <h1>Контакты</h1>
+            <div class="cover"></div>
+        </div>
+    </div>
+    <div class="menu-circle" state="closed"></div>
+<script src="data.js"></script>
+<script src="anime.min.js"></script>
+<script src="menu.js"></script>
+<script>
+    document.querySelector('.search-btn').style.width = getComputedStyle(document.querySelector('.search-btn')).height
+    document.querySelector('.lyrics').style.top = parseFloat(getComputedStyle(document.querySelector('.logo-styd')).height) + 50
+    document.querySelector('.lyrics').style.height = `${window.innerHeight - parseFloat(getComputedStyle(document.querySelector('.logo-styd')).height) - 50 - 90}px`
+</script>
+<script>
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+    while (currentIndex != 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+    return array;
+}
+
+let song_names = shuffle([
+    'Гражданин мира',
+    'Найки',
+    'Искусство',
+    'Плёнка',
+    'Индиго',
+    'Каждому своё',
+    'Сайгон',
+    'Плыть',
+    'Считалка',
+    // '90/00/10',
+    // 'Опечатки',
+    // 'Одиссея 2001',
+    // 'Стыд',
+    // 'Shutterstock',
+    // 'Хоровод',
+    // 'Уроборос',
+    // 'Ручеёк',
+    // 'Причины',
+    // 'Фальшивомонетчики',
+    // 'Вижу, слышу, говорю',
+    // 'Большими',
+    // 'Море',
+    // 'Музыка',
+    // 'Феминитив',
+    // 'Самурай',
+    // 'Когда Все Люди Пропадут',
+    // 'Мы',
+    // 'S.O.S',
+    // 'Компрачикос',
+    // 'Аттракционы',
+    // 'Ритуал',
+    // 'День за днем',
+    // 'Статус-кво',
+    // 'Продукты Туры Фотосервис',
+    // 'Осталось',
+    // 'Mood'
+])
+
+
+
+let container = document.querySelector('.container')
+let search_btn = document.querySelector('.search-btn')
+let search_bar = document.querySelector('.search-bar')
+let animated = false
+let search_group = document.querySelector('.search-group')
+let search_wrapper = document.querySelector('.search-wrapper')
+let search_result = document.querySelector('.search-result')
+let search_initial = search_wrapper.getBoundingClientRect().top
+let animating_result = false
+search_bar.addEventListener('input', function () {
+    if(!animated) {
+        anime({
+            targets: '.search-wrapper',
+            top: parseFloat(getComputedStyle(document.querySelector('.logo-styd')).height) + 50,
+            duration: 200,
+            easing: 'easeInOutQuad'
+        })
+        animated = true
+    }
+    anime({
+        targets: search_result,
+        opacity: 0,
+        duration: 200,
+        easing: 'easeInOutQuad',
+        complete: function() {
+            search_result.innerHTML = ''
+            if (search_bar.value != '') {
+                let result_songs = []
+                song_names.forEach((e) => {
+                    if (e.toLowerCase().startsWith(search_bar.value.toLowerCase())) { result_songs.push(e) }
+                })
+                song_names.forEach((e) => {
+                    if (e.toLowerCase().includes(search_bar.value.toLowerCase()) && !result_songs.includes(e)) { result_songs.push(e) }
+                })
+
+                if (result_songs.length > 7) { result_songs = result_songs.slice(0, 7) }
+                result_songs.forEach((e) => {
+                    let node = document.createElement('p')
+                    node.innerHTML = e
+                    search_result.append(node)
+                    node.addEventListener('click', function() {
+                        anime({
+                            targets: search_wrapper,
+                            left: document.querySelector('.logo-styd').getBoundingClientRect().left,
+                            duration: 200,
+                            easing: 'easeInOutQuad'
+                        })
+                        song_lyrics.forEach((e) => {
+                            console.log(e.name)
+                            if (e.name == node.innerHTML) {
+                                document.querySelector('.lyrics').innerHTML = e.lyrics
+                                document.querySelector('.lyrics').style.opacity = 1
+                                console.log(e.lyrics)
+                            }
+                        })
+                    })
+                })
+                anime({
+                    targets: search_result,
+                    opacity: 1,
+                    duration: 200,
+                    easing: 'easeInOutQuad'
+                })
+            } else {
+                anime({
+                    targets: '.search-wrapper',
+                    top: `${search_initial}px`,
+                    duration: 200,
+                    easing: 'easeInOutQuad'
+                })
+                animated = false
+            }
+        }
+    })
+})
+
+
+
+// let song_names = shuffle([
+//     'Гражданин мира',
+//     'Найки',
+//     'Искусство',
+//     'Плёнка',
+//     'Индиго',
+//     'Каждому своё',
+//     'Сайгон',
+//     'Плыть',
+//     'Считалка',
+//     '90/00/10',
+//     'Опечатки',
+//     'Одиссея 2001',
+//     'Стыд',
+//     'Shutterstock',
+//     'Хоровод',
+//     'Уроборос',
+//     'Ручеёк',
+//     'Причины',
+//     'Фальшивомонетчики',
+//     'Вижу, слышу, говорю',
+//     'Большими',
+//     'Море',
+//     'Музыка',
+//     'Феминитив',
+//     'Самурай',
+//     'Когда Все Люди Пропадут',
+//     'Мы',
+//     'S.O.S',
+//     'Компрачикос',
+//     'Аттракционы',
+//     'Ритуал',
+//     'День за днем',
+//     'Статус-кво',
+//     'Продукты Туры Фотосервис',
+//     'Осталось',
+//     'Mood'
+// ])
+
+// // let medium = song_names.slice(Math.floor(song_names.length / 3), 2 * Math.floor(song_names.length / 3))
+// // let small = song_names.slice(2 * Math.floor(song_names.length / 3))
+// // let search_rect = search_group.getBoundingClientRect()
+
+// // huge.forEach((e) => {
+// //     let song = document.createElement('div')
+// //     song.classList.add('song')
+// //     song.classList.add('huge')
+// //     song.innerHTML = e
+// //     container.appendChild(song)
+// //     song.style.left = `${anime.random(-1500, -150)}px`
+// //     song.style.top = `${anime.random(0, window.innerHeight - 50)}px`
+// // });
+
+// // medium.forEach((e) => {
+// //     let song = document.createElement('div')
+// //     song.classList.add('song')
+// //     song.classList.add('medium')
+// //     song.innerHTML = e
+// //     container.appendChild(song)
+// //     song.style.left = `${anime.random(-1500, -150)}px`
+// //     song.style.top = `${anime.random(0, window.innerHeight - 50)}px`
+// // });
+
+// // small.forEach((e) => {
+// //     let song = document.createElement('div')
+// //     song.classList.add('song')
+// //     song.classList.add('small')
+// //     song.innerHTML = e
+// //     container.appendChild(song)
+// //     song.style.left = `${anime.random(-1500, -150)}px`
+// //     song.style.top = `${anime.random(0, window.innerHeight - 50)}px`
+// // });
+// let songs_line = document.querySelector('.songs')
+// song_names.forEach((e) => {
+//     let song = document.createElement('div')
+//     song.classList.add('song')
+//     song.innerHTML = e
+//     songs_line.appendChild(song)
+// })
+
+// console.log(-parseFloat(getComputedStyle(songs_line).width))
+// songs_line.style.transform = `translateX(${-parseFloat(getComputedStyle(songs_line).width)}px`
+
+// anime({
+//     targets: '.songs',
+//     translateX: 0,
+//     duration: 300000,
+//     easing: 'linear',
+// })
+
+</script>
+</body>
+</html>

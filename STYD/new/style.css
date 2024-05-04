@@ -1,0 +1,41 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Comfortaa', cursive;
+    background-color: black;
+}
+
+.container {
+    width: 100%; height: 100vh;
+    display: flex;
+    overflow: hidden;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background-color: black;
+    z-index: 2;
+}
+
+.col {
+    width: 25%;
+    box-sizing: border-box;
+    padding: 10px;
+    height: auto;
+    background-color: black;
+}
+
+
+.col img {
+    width: 100%;
+    object-fit: contain;
+    min-height: 0;
+    max-height: 100%;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+
+

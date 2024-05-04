@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    font-family: 'Comfortaa', cursive;
+    color: white;
+    overflow: hidden;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-wrapper {
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+    position: absolute;
+}
+
+.search-wrapper p {
+    width: 100%;
+    align-self: left;
+}
+
+.search-group {
+    display: flex;
+}
+
+.search-result {
+    width: 100%;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+
+.search-result p:hover {
+    text-decoration: underline;
+}
+
+input {
+    border: none;
+    outline: none;
+    font-family: 'Motserrat', sans-serif;
+    border-radius: none;
+    border: 1px solid white;
+    /* border-right: none; */
+    background: transparent;
+    font-size: 1em;
+    color: white;
+    padding: .5em;
+    width: 20vw;
+    /* border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px; */
+    border-radius: 5px;
+}
+
+input:focus {
+    border: 1.5px solid white;
+    transform: scale(1.001);
+    box-shadow: 0 0 11px 2px rgba(213,0,210,0.74);
+}
+
+::placeholder {
+    font-family: 'Comfortaa', cursive;
+}
+
+.search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: black;
+    transform: rotateY(180deg);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    display: none;
+}
+
+.search-btn:hover {
+    background: #bcbcbc;
+    cursor: pointer;
+}
+
+.search-btn:active {
+    background: gray
+}
+
+/* .song {
+    color: white;
+    position: absolute;
+    flex-shrink: 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.huge { font-size: 2em; }
+.medium { font-size: 1.5em; }
+.small {font-size: 1em; } */
+
+.songs {
+    display: flex;
+    color: white;
+    flex-wrap: nowrap;
+    position: absolute;
+    top: 20px;
+}
+
+.song {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: 0 1em;
+    font-size: 2em;
+}
+
+.song:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.lyrics {
+    width: fit-content;
+    overflow: scroll;
+    opacity: 0;
+}
